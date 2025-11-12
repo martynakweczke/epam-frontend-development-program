@@ -1,0 +1,17 @@
+@use "../abstracts/variables" as v;
+
+.button-primary {
+  background-color: v.$color-primary;
+  color: v.$color-primary-contrast;
+  border: none;
+  padding: v.$spacing-unit * 2;
+  cursor: pointer;
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 18px;
+  align-self: flex-start;
+}
+
+
+
+/// hover ?

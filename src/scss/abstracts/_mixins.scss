@@ -1,0 +1,12 @@
+@mixin container($padding: 115px 200px) {
+  width: 100%;
+  margin: 0 auto;
+  padding: $padding;
+}
+
+@mixin image-card($image-path) {
+  background-image: url($image-path);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}

@@ -1,0 +1,454 @@
+@use "base/_reset";
+@use "base/_fonts" as f;
+@use "layouts/header";
+@use "layouts/footer";
+@use "abstracts/_variables" as v;
+@use "abstracts/_mixins" as mixin;
+@use "components/_buttons";
+@use "components/_forms";
+@use "components/_product-card";
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__first-part {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: v.$color-background-first-part;
+    width: 100vw;
+
+    &-container {
+      @include mixin.container();
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      @media (max-width: v.$breakpoint-lg) {
+        @include mixin.container(50px 200px);
+      }
+
+      @media (max-width: v.$breakpoint-md) {
+        @include mixin.container(50px 100px);
+      }
+    }
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: v.$spacing-unit * 2.5;
+
+      p {
+        color: v.$color-description;
+      }
+
+      @media (max-width: v.$breakpoint-md) {
+        p {
+          font-size: 12px;
+        }
+        h1 {
+          font-size: 35px;
+        }
+        .button-primary {
+          font-size: 10px;
+        }
+      }
+    }
+
+    &-image {
+      img {
+        height: 600px;
+        width: 600px;
+
+        @media (min-width: v.$breakpoint-lg) and (max-width: v.$breakpoint-2xl) {
+          height: 500px;
+          width: 500px;
+        }
+        @media (max-width: v.$breakpoint-lg) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__two-part {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: -100px auto 0 auto;
+    background-color: v.$color-background;
+    box-shadow: 0px 20px 80px 0px rgba(193, 199, 212, 0.702);
+    max-width: 1300px;
+
+    @media (max-width: v.$breakpoint-lg) {
+      flex-direction: column;
+      margin: -20px auto 0 auto;
+    }
+
+    .left-card {
+      flex: 1;
+      padding: 70px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: v.$spacing-unit * 3;
+
+      .profile-chief {
+        display: flex;
+        align-items: center;
+        gap: v.$spacing-unit * 2;
+
+        &-text {
+          display: flex;
+          flex-direction: column;
+
+          .profile-chief-name {
+            font-weight: 700;
+            font-size: 20px;
+            color: v.$color-text;
+          }
+
+          p {
+            color: v.$color-text;
+          }
+
+          @media (max-width: v.$breakpoint-md) {
+            .profile-chief-name {
+              font-size: 16px;
+            }
+            p {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+
+      p {
+        color: v.$color-description;
+      }
+
+      @media (max-width: v.$breakpoint-md) {
+        h2 {
+          font-size: 30px;
+        }
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .right-card {
+      display: flex;
+      flex: 1;
+      background-image: url("/src/assets/images/right-card.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      padding: 70px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 0;
+      }
+
+      &-elements {
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        color: v.$color-text-secondary;
+        gap: v.$spacing-unit * 3.5;
+
+        @media (max-width: v.$breakpoint-md) {
+          h2 {
+            font-size: 30px;
+          }
+          p {
+            font-size: 12px;
+          }
+          .button-primary {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  &__three-part {
+    @include mixin.container();
+    width: 100%;
+
+    @media (min-width: v.$breakpoint-lg) and (max-width: v.$breakpoint-2xl) {
+      @include mixin.container(115px 150px);
+    }
+    @media (min-width: v.$breakpoint-md) and (max-width: v.$breakpoint-lg) {
+      @include mixin.container(115px 100px);
+    }
+    @media (max-width: v.$breakpoint-md) {
+      @include mixin.container(80px 55px);
+    }
+
+    &-text {
+      margin-bottom: 60px;
+      text-align: center;
+
+      @media (max-width: v.$breakpoint-md) {
+        margin-bottom: 30px;
+        h2 {
+          font-size: 20px;
+        }
+        p {
+          font-size: 13px;
+        }
+      }
+      p {
+        color: v.$color-description;
+      }
+    }
+    &-images {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      justify-items: center;
+      gap: v.$spacing-unit * 4.5;
+
+      @media (max-width: v.$breakpoint-lg) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: v.$spacing-unit * 0.5;
+      }
+
+      .image-card {
+        position: relative;
+        width: 100%;
+        cursor: pointer;
+        aspect-ratio: 1 / 2;
+        @include mixin.image-card("/src/assets/images/travel-suitcase-1.svg");
+
+        @media (max-width: v.$breakpoint-lg) {
+          width: 80%;
+          height: 80%;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.4);
+          z-index: 0;
+        }
+
+        .image-card-text {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          color: v.$color-text-secondary;
+          padding: v.$spacing-unit * 4.5;
+          gap: v.$spacing-unit * 2.5;
+          bottom: 0;
+          left: 0;
+
+          @media (min-width: v.$breakpoint-lg) and (max-width: v.$breakpoint-2xl) {
+            padding: v.$spacing-unit * 5;
+          }
+
+          @media (min-width: v.$breakpoint-md) and (max-width: v.$breakpoint-lg) {
+            padding: v.$spacing-unit * 6;
+          }
+          @media (max-width: v.$breakpoint-md) {
+            padding: v.$spacing-unit * 1;
+          }
+
+          h3 {
+            line-height: 1.4;
+          }
+
+          p {
+            font-size: 18px;
+            line-height: 1.3;
+          }
+
+          @media (min-width: v.$breakpoint-lg) and (max-width: v.$breakpoint-2xl) {
+            h3 {
+              font-size: 13px;
+              line-height: 1.4;
+            }
+            p {
+              font-size: 13px;
+              line-height: 1.4;
+            }
+          }
+
+          @media (min-width: v.$breakpoint-md) and (max-width: v.$breakpoint-lg) {
+            h3 {
+              font-size: 16px;
+              line-height: 1.3;
+            }
+            p {
+              font-size: 16px;
+              line-height: 1.3;
+            }
+          }
+          @media (max-width: v.$breakpoint-md) {
+            h3 {
+              font-size: 9px;
+              line-height: 1.1;
+            }
+            p {
+              font-size: 9px;
+              line-height: 1.1;
+            }
+          }
+        }
+
+        &--2 {
+          @include mixin.image-card("/src/assets/images/travel-suitcase-2.svg");
+        }
+        &--3 {
+          @include mixin.image-card("/src/assets/images/travel-suitcase-3.svg");
+        }
+        &--4 {
+          @include mixin.image-card("/src/assets/images/travel-suitcase-4.svg");
+        }
+      }
+    }
+  }
+  &__banner {
+    box-shadow: 0px 20px 80px 0px rgba(193, 199, 212, 0.702);
+
+    background-image: url("/src/assets/images/banner.svg");
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    width: 80%;
+    max-width: 1300px;
+    margin: 0 auto 0 auto;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+
+    &-text {
+      color: v.$color-text-secondary;
+      gap: v.$spacing-unit * 18;
+      padding: 40px 140px;
+      display: flex;
+
+      @media (min-width: v.$breakpoint-md) and (max-width: v.$breakpoint-lg) {
+        flex-direction: column;
+        gap: v.$spacing-unit * 3;
+      }
+
+       @media (max-width: v.$breakpoint-md) {
+          flex-direction: column;
+        gap: v.$spacing-unit * 1;
+         padding: 20px 40px;
+        }
+    }
+
+    &-left {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      text-align: center;
+      z-index: 1;
+
+      .promo-text {
+        font-size: 220px;
+        font-weight: 900;
+        line-height: 1.1;
+
+        @media (min-width: v.$breakpoint-md) and (max-width: v.$breakpoint-lg) {
+          font-size: 85px;
+          font-weight: 900;
+          line-height: 1;
+        }
+        @media (min-width: v.$breakpoint-lg) and (max-width: v.$breakpoint-2xl) {
+          font-size: 120px;
+          font-weight: 900;
+          line-height: 1.1;
+        }
+         @media (max-width: v.$breakpoint-md) {
+          font-size: 50px;
+          line-height: 1;
+        }
+      }
+
+      p {
+        font-size: 20px;
+        line-height: 1.5;
+
+        @media (min-width: v.$breakpoint-md) and (max-width: v.$breakpoint-lg) {
+          font-size: 12px;
+          line-height: 1;
+        }
+         @media (max-width: v.$breakpoint-md) {
+          font-size: 8px;
+        }
+      }
+    }
+
+    &-right {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      z-index: 1;
+      gap: v.$spacing-unit * 1;
+      justify-content: center;
+
+      h2 {
+        line-height: 1;
+        @media (min-width: v.$breakpoint-md) and (max-width: v.$breakpoint-lg) {
+          font-size: 18px;
+        }
+        @media (min-width: v.$breakpoint-lg) and (max-width: v.$breakpoint-2xl) {
+          font-size: 25px;
+        }
+         @media (max-width: v.$breakpoint-md) {
+          font-size: 16px;
+        }
+      }
+      p {
+        font-size: 17px;
+        line-height: 1;
+
+        @media (min-width: v.$breakpoint-md) and (max-width: v.$breakpoint-lg) {
+          font-size: 12px;
+        }
+        @media (min-width: v.$breakpoint-lg) and (max-width: v.$breakpoint-2xl) {
+          font-size: 13px;
+        }
+        @media (max-width: v.$breakpoint-md) {
+          font-size: 8px;
+        }
+      }
+      @media (min-width: v.$breakpoint-md) and (max-width: v.$breakpoint-lg) {
+        .button-primary {
+          font-size: 8px;
+        }
+      }
+      @media (min-width: v.$breakpoint-lg) and (max-width: v.$breakpoint-2xl) {
+        .button-primary {
+          font-size: 11px;
+        }
+      }
+      @media (max-width: v.$breakpoint-md) {
+        .button-primary {
+          font-size:6px;
+        }
+      }
+    }
+  }
+}

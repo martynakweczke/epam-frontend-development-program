@@ -1,0 +1,218 @@
+@use "../abstracts/variables" as v;
+
+.footer {
+  overflow: hidden;
+
+  &__top {
+    background-color: v.$color-background-secondary;
+    color: v.$color-text-secondary;
+    position: relative;
+
+    &-background {
+      position: absolute;
+    }
+
+    &-container {
+      padding: v.$spacing-unit * 4.5 v.$spacing-unit * 28 v.$spacing-unit * 4
+        v.$spacing-unit * 25;
+
+      @media (max-width: v.$breakpoint-2xl) {
+        padding: v.$spacing-unit * 4.5 v.$spacing-unit * 10 v.$spacing-unit * 4
+          v.$spacing-unit * 10;
+      }
+      @media (max-width: v.$breakpoint-lg) {
+        padding: v.$spacing-unit * 4.5 v.$spacing-unit * 5 v.$spacing-unit * 4
+          v.$spacing-unit * 5;
+      }
+    }
+
+    &-title {
+      margin-bottom: v.$spacing-unit * 4;
+
+      @media (max-width: v.$breakpoint-md) {
+        justify-self: center;
+      }
+    }
+
+    &-content {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      align-items: start;
+      gap: v.$spacing-unit * 2;
+
+      @media (max-width: v.$breakpoint-md) {
+        grid-template-columns: 1fr;
+        justify-self: center;
+      }
+
+      &-item {
+        display: flex;
+        flex-direction: row;
+        gap: v.$spacing-unit * 1.5;
+        align-items: center;
+
+        p {
+          font-size: v.$text-sm;
+          font-weight: 500;
+          line-height: 1.5;
+          min-width: 100px;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    background-color: v.$color-background;
+
+    &-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: space-between;
+
+      @media (min-width: v.$breakpoint-2xl) {
+        padding: v.$spacing-unit * 15 v.$spacing-unit * 25 v.$spacing-unit * 14
+          v.$spacing-unit * 25;
+        gap: v.$spacing-unit * 14;
+      }
+
+      @media (min-width: v.$breakpoint-lg) and (max-width: v.$breakpoint-2xl) {
+        padding: v.$spacing-unit * 10 v.$spacing-unit * 4 v.$spacing-unit * 10
+          v.$spacing-unit * 4;
+        gap: v.$spacing-unit * 10;
+      }
+
+      @media (min-width: v.$breakpoint-md) and (max-width: v.$breakpoint-lg) {
+        grid-template-columns: 1fr;
+        row-gap: 2em;
+        padding: v.$spacing-unit * 6 v.$spacing-unit * 10;
+        text-align: center;
+      }
+
+      @media (max-width: v.$breakpoint-md) {
+        grid-template-columns: 1fr;
+        row-gap: 2em;
+        text-align: center;
+        padding: v.$spacing-unit * 6 v.$spacing-unit * 1;
+      }
+    }
+
+    &-information {
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      row-gap: 2em;
+
+      @media (max-width: v.$breakpoint-md) {
+        grid-template-rows: auto;
+      }
+    }
+
+    &-information-top {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: space-between;
+      gap: v.$spacing-unit;
+
+      @media (max-width: v.$breakpoint-md) {
+        grid-template-columns: 1fr;
+      }
+
+      .footer__about-us,
+      .footer__interesting-links,
+      .footer__achievements {
+        display: flex;
+        flex-direction: column;
+
+        h4 {
+          margin-bottom: v.$spacing-unit * 1;
+          min-width: 150px;
+          min-height: 3em;
+
+          @media (max-width: v.$breakpoint-md) {
+            min-height: auto;
+          }
+        }
+
+        span {
+          font-size: v.$text-sm;
+          font-weight: 400;
+          line-height: 1;
+          min-height: 2em;
+        }
+      }
+    }
+
+    &-information-bottom {
+      display: grid;
+
+      h4 {
+        margin-bottom: v.$spacing-unit * 1;
+      }
+
+      p {
+        font-size: v.$text-sm;
+        font-weight: 400;
+        line-height: 1.5;
+      }
+    }
+
+    &-contact {
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      row-gap: 2em;
+
+      @media (max-width: v.$breakpoint-md) {
+        row-gap: 2em;
+        grid-template-rows: 1fr;
+      }
+
+      .footer__contact-us {
+        display: grid;
+
+        h4 {
+          margin-bottom: v.$spacing-unit * 1;
+        }
+
+        p {
+          font-size: v.$text-sm;
+          font-weight: 400;
+          line-height: 1.5;
+        }
+      }
+
+      .footer__contact-data {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+
+        @media (max-width: v.$breakpoint-lg) {
+          margin: 0 auto;
+        }
+
+        .footer__contact-data-one,
+        .footer__contact-data-two {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+
+          .data-details {
+            display: flex;
+            gap: v.$spacing-unit * 2;
+            align-items: center;
+
+            p {
+              margin: 0;
+              font-size: v.$text-sm;
+              font-weight: 400;
+              line-height: 1.5;
+            }
+          }
+        }
+      }
+    }
+
+    &-copyright {
+      display: block;
+      justify-self: center;
+      color: v.$color-text-hint;
+      padding-bottom: v.$spacing-unit * 6;
+    }
+  }
+}

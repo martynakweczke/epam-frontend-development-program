@@ -1,3 +1,7 @@
+# App Description
+
+It's a capstone project implemented during EPAM System Frontend Development Internship. All of the code was implemented by myself. The project is a client-side application that displays a list of products loaded from a local data.json file. Users can view product details, manage a shopping cart (CRUD operations), sort and filter products by category. The application is responsive and should work well on different screen sizes and orientations. Moreover, login, review and contact forms are included with client-side validation.
+
 # Running the app
 
 To run the project locally, follow these steps:
@@ -19,7 +23,3 @@ To run the project locally, follow these steps:
     ```
 
     This command will compile all .scss files into .css, place them inside the dist folder and launch the project in your local environment.
-
-## Points achieved according to a checklist
-
-According to a checklist document I have completed 63 out of 64 points.

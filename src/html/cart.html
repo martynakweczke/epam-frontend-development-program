@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../dist/scss/main.css" />
+    <title>Best Shop</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container">
+        <div class="header__top">
+          <div class="header__socials">
+            <a href="#">
+              <img src="../assets/images/facebook.svg" alt="Facebook" />
+            </a>
+            <a href="#">
+              <img src="../assets/images/twitter.svg" alt="Twitter" />
+            </a>
+            <a href="#">
+              <img src="../assets/images/instagram.svg" alt="Instagram" />
+            </a>
+          </div>
+
+          <button class="header__burger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div class="header__logo">
+            <a href="../index.html" class="header__logo-link">
+              <img
+                src="../assets/images/logo.svg"
+                alt="Best Shop logo"
+                class="header__logo-img"
+              />
+              <span class="header__logo-text">BEST SHOP</span>
+            </a>
+          </div>
+
+          <div class="header__user">
+            <button
+              class="header__user-profile"
+              aria-label="Profile"
+              id="user-profile-icon"
+            >
+              <img src="../assets/images/profile.svg" alt="User profile" />
+            </button>
+            <div class="header__user-cart-container">
+              <a href="cart.html">
+                <button
+                  class="user-cart-button"
+                  aria-label="Shopping cart"
+                  id="user-cart-icon"
+                >
+                  <img
+                    src="../assets/images/shopping-cart.svg"
+                    alt="Cart"
+                  /></button
+              ></a>
+              <div class="user-cart-badge">
+                <p></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="header__separator"></div>
+
+        <nav class="header__nav">
+          <ul class="nav__list">
+            <li><a href="../index.html">Home</a></li>
+            <li>
+              <a href="catalog.html"
+                >Catalog
+                <img
+                  src="../assets/images/arrow.svg"
+                  alt="Catalog menu arrow"
+                />
+              </a>
+            </li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+
+          <div class="header__nav-mobile-social-icons">
+            <a href="#">
+              <img src="../assets/images/facebook.svg" alt="Facebook" />
+            </a>
+            <a href="#">
+              <img src="../assets/images/twitter.svg" alt="Twitter" />
+            </a>
+            <a href="#">
+              <img src="../assets/images/instagram.svg" alt="Instagram" />
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <dialog id="login-dialog" class="login-modal">
+      <form method="dialog" id="login-form">
+        <div class="form-group">
+          <label class="required" for="email">Email address</label>
+          <input type="email" id="email" required />
+        </div>
+        <div class="form-group">
+          <label class="required" for="password">Password</label>
+          <div class="password-wrapper">
+            <input type="password" id="password" required />
+            <img
+              src="../assets/images/toggle-password.svg"
+              alt="Toggle password visibility"
+              id="toggle-password"
+              class="toggle-password-icon"
+            />
+          </div>
+        </div>
+        <div class="login-actions-container">
+          <fieldset class="checkbox-remember">
+            <input type="checkbox" id="remember-me" name="rememberme" />
+            <label for="remember-me" class="remember-me">Remember me</label>
+          </fieldset>
+          <a href="#" id="forgot-password" class="forgot-password"
+            >Forgot your password?</a
+          >
+        </div>
+        <button type="submit" class="button-primary login-button">
+          LOG IN
+        </button>
+      </form>
+    </dialog>
+
+    <main class="cart">
+      <div class="cart__background">
+        <img
+          src="../assets/images/my-cart.svg"
+          alt="My Cart"
+          class="cart__background-image"
+        />
+        <h1 class="cart__background-title">My Cart</h1>
+      </div>
+      <div class="cart__content">
+        <div class="cart__content-products">
+          <table class="cart-table">
+            <thead class="cart-table__head">
+              <tr class="cart-table__row">
+                <th class="cart-table__header">IMAGE</th>
+                <th class="cart-table__header">PRODUCT NAME</th>
+                <th class="cart-table__header">PRICE</th>
+                <th class="cart-table__header">QUANTITY</th>
+                <th class="cart-table__header">TOTAL</th>
+                <th class="cart-table__header">DELETE</th>
+              </tr>
+            </thead>
+            <tbody id="cart-products-list" class="cart-table__body"></tbody>
+          </table>
+        </div>
+
+        <div class="cart__content-actions-checkout-container">
+          <div class="cart__content-actions">
+            <a href="../index.html"
+              ><button class="button-primary cart__content-actions-button">
+                CONTINUE SHOPPING
+              </button></a
+            >
+            <button
+              class="button-primary cart__content-actions-button"
+              id="clear-shopping-cart-button"
+            >
+              CLEAR SHOPPING CART
+            </button>
+          </div>
+          <div class="cart__content-checkout">
+            <div class="checkout-summary">
+              <div class="checkout-summary__row">
+                <span class="checkout-summary__label">Sub Total</span>
+                <span class="checkout-summary__value" id="subtotal"></span>
+              </div>
+              <div class="checkout-summary__separator"></div>
+              <div class="checkout-summary__row checkout-summary__discount">
+                <span class="checkout-summary__label">Discount</span>
+                <span class="checkout-summary__value" id="discount"></span>
+              </div>
+              <div
+                class="checkout-summary__separator checkout-summary__discount"
+              ></div>
+              <div class="checkout-summary__row">
+                <span class="checkout-summary__label">Shipping</span>
+                <span class="checkout-summary__value" id="shipping"></span>
+              </div>
+              <div class="checkout-summary__separator"></div>
+              <div class="checkout-summary__row checkout-summary__row--total">
+                <span class="checkout-summary__label">Total</span>
+                <span class="checkout-summary__value" id="total"></span>
+              </div>
+              <button
+                class="button-primary checkout-summary__button"
+                id="checkout-button"
+              >
+                CHECKOUT
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__top">
+        <img
+          src="../assets/images/vector-lines.svg"
+          alt="Horizontal lines"
+          class="footer__top-background"
+        />
+        <div class="footer__top-container">
+          <h3 class="footer__top-title">Our Benefits</h3>
+          <div class="footer__top-content">
+            <div class="footer__top-content-item">
+              <img
+                src="../assets/images/travel-hospitality.svg"
+                alt="Travel hospitality"
+                class="footer__icon"
+              />
+              <p>Velit nisl sodales eget donec quis. volutpat orci.</p>
+            </div>
+            <div class="footer__top-content-item">
+              <img
+                src="../assets/images/track-work-delivery.svg"
+                alt="Track work delivery"
+                class="footer__icon"
+              />
+              <p>Dolor eu varius. Morbi fermentum velit nisl.</p>
+            </div>
+            <div class="footer__top-content-item">
+              <img
+                src="../assets/images/coins.svg"
+                alt="Coins"
+                class="footer__icon"
+              />
+              <p>Malesuada fames ac ante ipsum primis in faucibus.</p>
+            </div>
+            <div class="footer__top-content-item">
+              <img
+                src="../assets/images/education.svg"
+                alt="Education"
+                class="footer__icon"
+              />
+              <p>Nisl sodales eget donec quis. volutpat orci.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div class="footer__bottom-container">
+          <div class="footer__bottom-information">
+            <div class="footer__bottom-information-top">
+              <div class="footer__about-us">
+                <h4><a href="about.html">About Us</a></h4>
+                <span>Organisation</span>
+                <span>Partners</span>
+                <span>Clients</span>
+              </div>
+              <div class="footer__interesting-links">
+                <h4>Interesting Links</h4>
+                <span>Photo Gallery</span>
+                <span>Our Team</span>
+                <span>Socials</span>
+              </div>
+              <div class="footer__achievements">
+                <h4>Achievements</h4>
+                <span>Winning Awards</span>
+                <span>Press</span>
+                <span>Our Amazing Clients</span>
+              </div>
+            </div>
+            <div class="footer__bottom-information-bottom">
+              <h4>Shipping Information</h4>
+              <p>
+                Nulla eleifend pulvinar purus, molestie euismod odio imperdiet
+                ac. Ut sit amet erat nec nibh rhoncus varius in non lorem. Donec
+                interdum, lectus in convallis pulvinar, enim elit porta sapien,
+                vel finibus erat felis sed neque. Etiam aliquet neque sagittis
+                erat tincidunt aliquam.
+              </p>
+            </div>
+          </div>
+          <div class="footer__bottom-contact">
+            <div class="footer__contact-us">
+              <h4><a href="contact.html">Contact Us</a></h4>
+              <p>
+                Bendum dolor eu varius. Morbi fermentum velitsodales egetonec.
+                volutpat orci. Sed ipsum felis, tristique egestas et, convallis
+                ac velitn consequat nec luctus.
+              </p>
+            </div>
+            <div class="footer__contact-data">
+              <div class="footer__contact-data-one">
+                <div class="data-details">
+                  <img
+                    src="../assets/images/phone.svg"
+                    alt="Phone icon"
+                    class="footer__contact-icon"
+                  />
+                  <p>Phone: (+63) 236 6322</p>
+                </div>
+                <div class="data-details">
+                  <img
+                    src="../assets/images/email.svg"
+                    alt="Email icon"
+                    class="footer__contact-icon"
+                  />
+                  <p>public@news.com</p>
+                </div>
+              </div>
+              <div class="footer__contact-data-two">
+                <div class="data-details">
+                  <img
+                    src="../assets/images/time.svg"
+                    alt="Time icon"
+                    class="footer__contact-icon"
+                  />
+                  <p>Mon - Fri: 10am - 6pm<br />Sat - Sun: 10am - 6pm</p>
+                </div>
+                <div class="data-details">
+                  <img
+                    src="../assets/images/address.svg"
+                    alt="Address icon"
+                    class="footer__contact-icon"
+                  />
+                  <p>639 Jade Valley, Washington Dc</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="footer__bottom-copyright">&copy; Copyright 2025</span>
+      </div>
+    </footer>
+
+    <script type="module" src="../js/main.js"></script>
+    <script type="module" src="../js/cart.js"></script>
+  </body>
+</html>

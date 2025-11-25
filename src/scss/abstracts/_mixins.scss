@@ -1,3 +1,5 @@
+@use "_variables" as v;
+
 @mixin container($padding: 115px 200px) {
   width: 100%;
   margin: 0 auto;
@@ -9,4 +11,21 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+@mixin link-primary() {
+  text-decoration: none;
+  color: v.$color-text;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: v.$color-primary;
+  }
+}
+
+@mixin element-required() {
+  &::after {
+    content: " *";
+    color: v.$color-primary;
+  }
 }

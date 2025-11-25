@@ -1,25 +1,28 @@
 // COLORS
 $color-primary: #b92770;
-$color-primary-contrast: #ffffff;
-$color-background: #ffffff;
+$color-primary-contrast: #fff;
+$color-background: #fff;
 $color-background-secondary: #504e4a;
-$color-background-first-part: rgba(231, 232, 233, 1);
-
-$color-text: #000000;
-$color-text-secondary: #ffffff;
-$color-text-hint: hsla(0, 0%, 0%, 0.35);
-
+$color-background-first-part: rgb(231 232 233 / 100%);
+$color-text: #000;
+$color-text-secondary: #fff;
+$color-text-hint: hsl(0deg 0% 0% / 35%);
 $color-border: #727174;
-$color-description: rgba(80, 78, 74, 1);
+$color-description: rgb(80 78 74 / 100%);
+$color-catalog-elements: rgb(233 233 237 / 100%);
+$color-filter-elements: rgb(114 113 116 / 100%);
 
 // SPACING
 $spacing-unit: 8px;
 
 // BREAKPOINTS
+$breakpoint-sm: 640px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 1024px;
 $breakpoint-xl: 1280px;
 $breakpoint-2xl: 1440px;
+$breakpoint-3xl: 1650px;
+$breakpoint-lg-mid: 1250px;
 
 // Font sizes (based on TailwindCSS default font sizes)
 $text-xs: 0.75rem; // 12px

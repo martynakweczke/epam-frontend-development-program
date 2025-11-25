@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../dist/scss/main.css" />
+    <title>Best Shop</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container">
+        <div class="header__top">
+          <div class="header__socials">
+            <a href="#">
+              <img src="../assets/images/facebook.svg" alt="Facebook" />
+            </a>
+            <a href="#">
+              <img src="../assets/images/twitter.svg" alt="Twitter" />
+            </a>
+            <a href="#">
+              <img src="../assets/images/instagram.svg" alt="Instagram" />
+            </a>
+          </div>
+
+          <button class="header__burger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div class="header__logo">
+            <a href="../index.html" class="header__logo-link">
+              <img
+                src="../assets/images/logo.svg"
+                alt="Best Shop logo"
+                class="header__logo-img"
+              />
+              <span class="header__logo-text">BEST SHOP</span>
+            </a>
+          </div>
+
+          <div class="header__user">
+            <button
+              class="header__user-profile"
+              aria-label="Profile"
+              id="user-profile-icon"
+            >
+              <img src="../assets/images/profile.svg" alt="User profile" />
+            </button>
+            <div class="header__user-cart-container">
+              <a href="cart.html">
+                <button
+                  class="user-cart-button"
+                  aria-label="Shopping cart"
+                  id="user-cart-icon"
+                >
+                  <img
+                    src="../assets/images/shopping-cart.svg"
+                    alt="Cart"
+                  /></button
+              ></a>
+              <div class="user-cart-badge">
+                <p></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="header__separator"></div>
+
+        <nav class="header__nav">
+          <ul class="nav__list">
+            <li><a href="../index.html">Home</a></li>
+            <li>
+              <a href="catalog.html"
+                >Catalog
+                <img
+                  src="../assets/images/arrow.svg"
+                  alt="Catalog menu arrow"
+                />
+              </a>
+            </li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+
+          <div class="header__nav-mobile-social-icons">
+            <a href="#">
+              <img src="../assets/images/facebook.svg" alt="Facebook" />
+            </a>
+            <a href="#">
+              <img src="../assets/images/twitter.svg" alt="Twitter" />
+            </a>
+            <a href="#">
+              <img src="../assets/images/instagram.svg" alt="Instagram" />
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <dialog id="login-dialog" class="login-modal">
+      <form method="dialog" id="login-form">
+        <div class="form-group">
+          <label class="required" for="email">Email address</label>
+          <input type="email" id="email" required />
+        </div>
+        <div class="form-group">
+          <label class="required" for="password">Password</label>
+          <div class="password-wrapper">
+            <input type="password" id="password" required />
+            <img
+              src="../assets/images/toggle-password.svg"
+              alt="Toggle password visibility"
+              id="toggle-password"
+              class="toggle-password-icon"
+            />
+          </div>
+        </div>
+        <div class="login-actions-container">
+          <fieldset class="checkbox-remember">
+            <input type="checkbox" id="remember-me" name="rememberme" />
+            <label for="remember-me" class="remember-me">Remember me</label>
+          </fieldset>
+          <a href="#" id="forgot-password" class="forgot-password"
+            >Forgot your password?</a
+          >
+        </div>
+        <button type="submit" class="button-primary login-button">
+          LOG IN
+        </button>
+      </form>
+    </dialog>
+
+    <main class="product-details">
+      <div class="product-details-container">
+        <div
+          class="product-details-container-images"
+          id="product-details-container-images"
+        >
+          <div
+            id="product-details-container-images-main-image"
+            class="product-details-big-image"
+          ></div>
+          <div
+            id="product-details-container-images-small-images"
+            class="product-details-small-images"
+          >
+            <img
+              src="/src/assets/images/small-image-1.svg"
+              alt="Luggage in a front position"
+            />
+            <img
+              src="/src/assets/images/small-image-2.svg"
+              alt="Luggage side view"
+            />
+            <img
+              src="/src/assets/images/small-image-3.svg"
+              alt="Opened luggage"
+            />
+            <img
+              src="/src/assets/images/small-image-4.svg"
+              alt="Open standing luggage"
+            />
+          </div>
+        </div>
+        <div class="product-details-container-details">
+          <div class="first-part-details">
+            <div
+              class="product-details-container-details-name"
+              id="product-details-container-details-name"
+            ></div>
+            <div class="rating">
+              <div
+                class="product-details-container-details-rating"
+                id="product-details-container-details-rating"
+              ></div>
+              <p class="clients-review">(1 Clients Review)</p>
+            </div>
+            <div
+              class="product-details-container-details-price"
+              id="product-details-container-details-price"
+            ></div>
+          </div>
+          <div class="second-part-details">
+            <p>
+              The new Global Explorer Max Comfort Suitcase Pro is a bold
+              reimagining of travel essentials, designed to elevate every
+              journey. Made with at least 30% recycled materials, its
+              lightweight yet impact-resistant shell combines eco- conscious
+              innovation with rugged durability.
+            </p>
+            <p>
+              The ergonomic handle and GlideMotion spinner wheels ensure
+              effortless mobility while making a statement in sleek design.
+              Inside, the modular compartments and adjustable straps keep your
+              belongings secure and neatly organized, no matter the destination.
+            </p>
+          </div>
+          <form class="product-details-form">
+            <div class="product-details-form-column">
+              <div class="filter-group">
+                <label for="filter-size">Size</label>
+                <select id="filter-size">
+                  <option>Choose option</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label for="filter-color">Color</label>
+                <select id="filter-color">
+                  <option>Choose option</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label for="filter-category">Category</label>
+                <select id="filter-category">
+                  <option>Choose option</option>
+                </select>
+              </div>
+            </div>
+          </form>
+          <div class="product-details-actions">
+            <div class="product-details-quantity">
+              <button class="quantity-button" id="quantity-decrease">-</button>
+              <span class="quantity-value" id="quantity-value">1</span>
+              <button class="quantity-button" id="quantity-increase">+</button>
+            </div>
+            <button
+              type="button"
+              class="button-primary button-add-to-cart"
+              id="button-add-to-cart"
+            >
+              Add To Cart
+            </button>
+          </div>
+          <div class="images-payment">
+            <p class="payment-text">Payment:</p>
+            <img
+              src="/src/assets/images/visa-pay-logo.svg"
+              alt="Visa payment"
+            />
+            <img
+              src="/src/assets/images/american-express-logo.svg"
+              alt="American Express payment"
+            />
+            <img
+              src="/src/assets/images/master-card-logo.svg"
+              alt="MasterCard payment"
+            />
+            <img
+              src="/src/assets/images/paypal-logo.svg"
+              alt="PayPal payment"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <div class="tabs-header">
+          <button class="tabs-button tabs-button-active" data-tab="details">
+            DETAILS
+          </button>
+          <button class="tabs-button" data-tab="reviews">REVIEWS</button>
+          <button class="tabs-button" data-tab="shipping">
+            SHIPPING POLICY
+          </button>
+        </div>
+
+        <div class="tabs-content">
+          <div class="tabs-panel tabs-panel-active" data-panel="details">
+            <p>
+              Vestibulum commodo sapien non elit porttitor, vitae volutpat nibh
+              mollis. Nulla porta risus id neque tempor, in efficitur justo
+              imperdiet. Etiam a ex at sapien suscipit. Sed bibendum, ipsum nec
+              viverra malesuada, erat nisl sodales purus, eget hendrerit dui
+              ligula eu enim. Ut non est nisl. Pellentesque curabitur ac
+              placerat est, sit amet sodales risus. Pellentesque viverra dui
+              auctor, ullamcorper turpis pharetra, facilisis quam.
+            </p>
+            <p>
+              Proin iaculis nibh vitae lectus mollis bibendum. Quisque varius
+              eget urna sit amet luctus. Suspendisse potenti. Curabitur ac
+              placerat est, sit amet sodales risus. Pellentesque viverra dui
+              auctor, ullamcorper turpis pharetra, facilisis quam. Sed ipsum
+              felis, tristique egestas et, convallis ac velit. In consequat nec
+              luctus bibendum.
+            </p>
+            <p>
+              Quisque varius eget urna sit amet luctus. Suspendisse potenti.
+              Curabitur ac placerat est, sit amet sodales risus. Pellentesque
+              viverra dui auctor, ullamcorper turpis pharetra, facilisis quam.
+            </p>
+          </div>
+
+          <div class="tabs-panel" data-panel="reviews">
+            <div class="review-container">
+              <div class="review-container-left">
+                <p class="review-title">
+                  1 review for Global Explorer Max Comfort Suitcase Pro
+                </p>
+                <div class="review">
+                  <img
+                    class="review-image"
+                    alt="Ella Harper"
+                    src="../assets/images/ella-harper.svg"
+                  />
+                  <div class="review-text-container">
+                    <div class="review-text-container-top">
+                      <div class="review-text-container-top-main">
+                        <p class="person-name-review">Ella Harper</p>
+                        <p class="date-review">/ June 11, 2025</p>
+                      </div>
+                      <div class="stars">
+                        <img
+                          src="../assets/images/gold-star.svg"
+                          alt="Gold Star"
+                        />
+                        <img
+                          src="../assets/images/gold-star.svg"
+                          alt="Gold Star"
+                        />
+                        <img
+                          src="../assets/images/gold-star.svg"
+                          alt="Gold Star"
+                        />
+                        <img
+                          src="../assets/images/gold-star.svg"
+                          alt="Gold Star"
+                        />
+                        <img
+                          src="../assets/images/gray-star.svg"
+                          alt="Gray Star"
+                        />
+                      </div>
+                    </div>
+                    <p class="review-text-container-bottom">
+                      Proin iaculis nibh vitae lectus mollis bibendum. Quisque
+                      varius eget urna sit amet luctus. Suspendisse potenti
+                      curabitur ac placerat est, sit amet sodales risus.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="review-container-right">
+                <p class="add-review-text">Add Review</p>
+                <p class="add-review-description">
+                  Your email address won't be shared with anybody. Required
+                  fields have the symbol *
+                </p>
+                <div class="rate-product">
+                  <p class="text-rate-product">RATE PRODUCT</p>
+                  <div class="empty-stars">
+                    <img
+                      src="../assets/images/empty-star.svg"
+                      alt="Empty Star"
+                    />
+                    <img
+                      src="../assets/images/empty-star.svg"
+                      alt="Empty Star"
+                    />
+                    <img
+                      src="../assets/images/empty-star.svg"
+                      alt="Empty Star"
+                    />
+                    <img
+                      src="../assets/images/empty-star.svg"
+                      alt="Empty Star"
+                    />
+                    <img
+                      src="../assets/images/empty-star.svg"
+                      alt="Empty Star"
+                    />
+                  </div>
+                </div>
+                <form class="review-form" id="review-form" novalidate>
+                  <div class="review-form-group">
+                    <label for="review-text" class="visually-hidden">
+                      Your Review
+                    </label>
+                    <div class="input-wrapper">
+                      <textarea
+                        name="review"
+                        id="review-text"
+                        rows="8"
+                        placeholder="Your Review"
+                        required
+                      ></textarea>
+                      <span class="required-star">*</span>
+                      <p class="error-message"></p>
+                    </div>
+                  </div>
+                  <div class="review-form-row">
+                    <div class="review-form-group">
+                      <label for="review-name" class="visually-hidden"
+                        >Your Name</label
+                      >
+                      <div class="input-wrapper">
+                        <input
+                          type="text"
+                          name="name"
+                          id="review-name"
+                          placeholder="Your Name"
+                          required
+                        />
+                        <span class="required-star">*</span>
+                        <p class="error-message"></p>
+                      </div>
+                    </div>
+                    <div class="review-form-group">
+                      <label for="review-email" class="visually-hidden"
+                        >Your Email</label
+                      >
+                      <div class="input-wrapper">
+                        <input
+                          type="email"
+                          name="email"
+                          id="email"
+                          placeholder="Your Email"
+                          required
+                        />
+                        <span class="required-star">*</span>
+                        <p class="error-message"></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review-form-checkbox">
+                    <input type="checkbox" name="save-data" />
+                    <label for="save-review-data">
+                      Save my name, email, and website in this browser for when
+                      I leave another comment.
+                    </label>
+                  </div>
+                  <button
+                    type="submit"
+                    class="button-primary review-submit"
+                    id="submit-button-review"
+                  >
+                    SUBMIT
+                  </button>
+                </form>
+                <div id="feedback-status"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tabs-panel" data-panel="shipping">
+            <p>Shipping policy information will be displayed here.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="recommendations">
+        <div class="recommendations-title">
+          <p class="recommendations-title-text">You May Also Like</p>
+        </div>
+        <div
+          class="recommendations-products-container"
+          id="recommendations-products-container"
+        ></div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__top">
+        <img
+          src="../assets/images/vector-lines.svg"
+          alt="Horizontal lines"
+          class="footer__top-background"
+        />
+        <div class="footer__top-container">
+          <h3 class="footer__top-title">Our Benefits</h3>
+          <div class="footer__top-content">
+            <div class="footer__top-content-item">
+              <img
+                src="../assets/images/travel-hospitality.svg"
+                alt="Travel hospitality"
+                class="footer__icon"
+              />
+              <p>Velit nisl sodales eget donec quis. volutpat orci.</p>
+            </div>
+            <div class="footer__top-content-item">
+              <img
+                src="../assets/images/track-work-delivery.svg"
+                alt="Track work delivery"
+                class="footer__icon"
+              />
+              <p>Dolor eu varius. Morbi fermentum velit nisl.</p>
+            </div>
+            <div class="footer__top-content-item">
+              <img
+                src="../assets/images/coins.svg"
+                alt="Coins"
+                class="footer__icon"
+              />
+              <p>Malesuada fames ac ante ipsum primis in faucibus.</p>
+            </div>
+            <div class="footer__top-content-item">
+              <img
+                src="../assets/images/education.svg"
+                alt="Education"
+                class="footer__icon"
+              />
+              <p>Nisl sodales eget donec quis. volutpat orci.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div class="footer__bottom-container">
+          <div class="footer__bottom-information">
+            <div class="footer__bottom-information-top">
+              <div class="footer__about-us">
+                <h4><a href="about.html">About Us</a></h4>
+                <span>Organisation</span>
+                <span>Partners</span>
+                <span>Clients</span>
+              </div>
+              <div class="footer__interesting-links">
+                <h4>Interesting Links</h4>
+                <span>Photo Gallery</span>
+                <span>Our Team</span>
+                <span>Socials</span>
+              </div>
+              <div class="footer__achievements">
+                <h4>Achievements</h4>
+                <span>Winning Awards</span>
+                <span>Press</span>
+                <span>Our Amazing Clients</span>
+              </div>
+            </div>
+            <div class="footer__bottom-information-bottom">
+              <h4>Shipping Information</h4>
+              <p>
+                Nulla eleifend pulvinar purus, molestie euismod odio imperdiet
+                ac. Ut sit amet erat nec nibh rhoncus varius in non lorem. Donec
+                interdum, lectus in convallis pulvinar, enim elit porta sapien,
+                vel finibus erat felis sed neque. Etiam aliquet neque sagittis
+                erat tincidunt aliquam.
+              </p>
+            </div>
+          </div>
+          <div class="footer__bottom-contact">
+            <div class="footer__contact-us">
+              <h4><a href="contact.html">Contact Us</a></h4>
+              <p>
+                Bendum dolor eu varius. Morbi fermentum velitsodales egetonec.
+                volutpat orci. Sed ipsum felis, tristique egestas et, convallis
+                ac velitn consequat nec luctus.
+              </p>
+            </div>
+            <div class="footer__contact-data">
+              <div class="footer__contact-data-one">
+                <div class="data-details">
+                  <img
+                    src="../assets/images/phone.svg"
+                    alt="Phone icon"
+                    class="footer__contact-icon"
+                  />
+                  <p>Phone: (+63) 236 6322</p>
+                </div>
+                <div class="data-details">
+                  <img
+                    src="../assets/images/email.svg"
+                    alt="Email icon"
+                    class="footer__contact-icon"
+                  />
+                  <p>public@news.com</p>
+                </div>
+              </div>
+              <div class="footer__contact-data-two">
+                <div class="data-details">
+                  <img
+                    src="../assets/images/time.svg"
+                    alt="Time icon"
+                    class="footer__contact-icon"
+                  />
+                  <p>Mon - Fri: 10am - 6pm<br />Sat - Sun: 10am - 6pm</p>
+                </div>
+                <div class="data-details">
+                  <img
+                    src="../assets/images/address.svg"
+                    alt="Address icon"
+                    class="footer__contact-icon"
+                  />
+                  <p>639 Jade Valley, Washington Dc</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="footer__bottom-copyright">&copy; Copyright 2025</span>
+      </div>
+    </footer>
+
+    <script type="module" src="../js/main.js"></script>
+    <script type="module" src="../js/product.js"></script>
+  </body>
+</html>

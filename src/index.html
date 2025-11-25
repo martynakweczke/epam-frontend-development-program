@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -30,7 +30,7 @@
           </button>
 
           <div class="header__logo">
-            <a href="#" class="header__logo-link">
+            <a href="index.html" class="header__logo-link">
               <img
                 src="assets/images/logo.svg"
                 alt="Best Shop logo"
@@ -41,12 +41,29 @@
           </div>
 
           <div class="header__user">
-            <button class="header__user-profile" aria-label="Profile">
+            <button
+              class="header__user-profile"
+              aria-label="Profile"
+              id="user-profile-icon"
+            >
               <img src="assets/images/profile.svg" alt="User profile" />
             </button>
-            <button class="header__user-cart" aria-label="Shopping cart">
-              <img src="assets/images/shopping-cart.svg" alt="Cart" />
-            </button>
+            <div class="header__user-cart-container">
+              <a href="html/cart.html">
+                <button
+                  class="user-cart-button"
+                  aria-label="Shopping cart"
+                  id="user-cart-icon"
+                >
+                  <img
+                    src="assets/images/shopping-cart.svg"
+                    alt="Cart"
+                  /></button
+              ></a>
+              <div class="user-cart-badge">
+                <p></p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -56,13 +73,13 @@
           <ul class="nav__list">
             <li><a href="index.html" class="active">Home</a></li>
             <li>
-              <a href="catalog.html"
+              <a href="html/catalog.html"
                 >Catalog
                 <img src="assets/images/arrow.svg" alt="Catalog menu arrow" />
               </a>
             </li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="html/about.html">About Us</a></li>
+            <li><a href="html/contact.html">Contact Us</a></li>
           </ul>
 
           <div class="header__nav-mobile-social-icons">
@@ -79,6 +96,40 @@
         </nav>
       </div>
     </header>
+
+    <dialog id="login-dialog" class="login-modal">
+      <form method="dialog" id="login-form">
+        <div class="form-group">
+          <label class="required" for="email">Email address</label>
+          <input type="email" id="email" required />
+        </div>
+        <div class="form-group">
+          <label class="required" for="password">Password</label>
+          <div class="password-wrapper">
+            <input type="password" id="password" required />
+            <img
+              src="assets/images/toggle-password.svg"
+              alt="Toggle password visibility"
+              id="toggle-password"
+              class="toggle-password-icon"
+            />
+          </div>
+        </div>
+        <div class="login-actions-container">
+          <fieldset class="checkbox-remember">
+            <input type="checkbox" id="remember-me" name="rememberme" />
+            <label for="remember-me" class="remember-me">Remember me</label>
+          </fieldset>
+          <a href="#" id="forgot-password" class="forgot-password"
+            >Forgot your password?</a
+          >
+        </div>
+        <button type="submit" class="button-primary login-button">
+          LOG IN
+        </button>
+      </form>
+    </dialog>
+
     <main class="main">
       <div class="main__first-part">
         <div class="main__first-part-container">
@@ -88,7 +139,9 @@
               Phasellus risus turpis, pretium sit amet magna non, molestie
               ultricies enim. Nullam pulvinar felis at metus.
             </p>
-            <button class="button-primary">View All Items</button>
+            <a href="./html/catalog.html"
+              ><button class="button-primary">View All Items</button></a
+            >
           </div>
           <div class="main__first-part-image">
             <img src="assets/images/slogan-suitcase.svg" alt="Suitcase" />
@@ -99,7 +152,10 @@
         <div class="left-card">
           <div class="profile-chief">
             <div class="profile-chief-image">
-              <img src="assets/images/person-lillian.svg" alt="Profile photo" />
+              <img
+                src="assets/images/person-lillian.svg"
+                alt="Lillian's avatar"
+              />
             </div>
 
             <div class="profile-chief-text">
@@ -173,26 +229,83 @@
           </div>
         </div>
       </div>
+
+      <div class="main__selected">
+        <div class="main__selected-title">
+          <h2>Selected Products</h2>
+          <p>Duis vestibulum elit vel neque pharetra</p>
+        </div>
+        <div id="selected-products" class="main__selected-container"></div>
+      </div>
+
       <div class="main__banner">
         <div class="main__banner-text">
-        <div class="main__banner-left">
-          <p class="promo-text">50%</p>
-          <p>Curabitur vulputate arcu odio, ac facilisis diam.</p>
-        </div>
-        <div class="main__banner-right">
-          <h2>Offer Of The Month</h2>
-          <p>
-            Curabitur vulputate arcu odio, ac facilisis diam accumsan ut. Ut
-            imperdiet et leo in vulputate.
-          </p>
-          <button class="button-primary">Get Offer Today</button>
-        </div>
+          <div class="main__banner-left">
+            <p class="promo-text">50%</p>
+            <p>Curabitur vulputate arcu odio, ac facilisis diam.</p>
+          </div>
+          <div class="main__banner-right">
+            <h2>Offer Of The Month</h2>
+            <p>
+              Curabitur vulputate arcu odio, ac facilisis diam accumsan ut. Ut
+              imperdiet et leo in vulputate.
+            </p>
+            <button class="button-primary">Get Offer Today</button>
+          </div>
         </div>
       </div>
+
+      <div class="main__arrival">
+        <div class="main__arrival-title">
+          <h2>New Products Arrival</h2>
+          <p>Duis vestibulum elit vel neque pharetra</p>
+        </div>
+        <div id="new-products-arrival" class="main__arrival-container"></div>
+      </div>
+
       <div class="main__customers">
-         <div class="main__customers-title">
+        <div class="main__customers-title">
           <h2>Our Grateful Customers</h2>
           <p>Duis vestibulum elit vel neque pharetra</p>
+        </div>
+        <div class="main__customers-list">
+          <div class="customer-card">
+            <img
+              src="assets/images/customer-ethan.svg"
+              alt="Ethan Wade"
+              class="customer-card__image"
+            />
+            <p>
+              Curabitur vulputate arcu odio, ac facilisis diam accumsan ut. Ut
+              mperdiet et leo in vulputate.
+            </p>
+            <p class="customer-name">Ethan Wade, New York</p>
+          </div>
+          <div class="customer-card">
+            <img
+              src="assets/images/customer-jane.svg"
+              alt="Jane Reyes"
+              class="customer-card__image"
+            />
+            <p>
+              Curabitur vulputate arcu odio, ac facilisis diam accumsan ut. Ut
+              mperdiet et leo in vulputate.
+            </p>
+            <p class="customer-name">Jane Reyes, California</p>
+          </div>
+
+          <div class="customer-card">
+            <img
+              src="assets/images/customer-erica.svg"
+              alt="Erica Banks"
+              class="customer-card__image"
+            />
+            <p>
+              Curabitur vulputate arcu odio, ac facilisis diam accumsan ut. Ut
+              mperdiet et leo in vulputate.
+            </p>
+            <p class="customer-name">Erica Banks, Miami</p>
+          </div>
         </div>
       </div>
     </main>
@@ -248,7 +361,7 @@
           <div class="footer__bottom-information">
             <div class="footer__bottom-information-top">
               <div class="footer__about-us">
-                <h4>About Us</h4>
+                <h4><a href="html/about.html">About Us</a></h4>
                 <span>Organisation</span>
                 <span>Partners</span>
                 <span>Clients</span>
@@ -279,7 +392,7 @@
           </div>
           <div class="footer__bottom-contact">
             <div class="footer__contact-us">
-              <h4>Contact Us</h4>
+              <h4><a href="html/contact.html">Contact Us</a></h4>
               <p>
                 Bendum dolor eu varius. Morbi fermentum velitsodales egetonec.
                 volutpat orci. Sed ipsum felis, tristique egestas et, convallis
@@ -330,6 +443,7 @@
       </div>
     </footer>
 
-    <script src="./js/main.js"></script>
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/home.js"></script>
   </body>
 </html>

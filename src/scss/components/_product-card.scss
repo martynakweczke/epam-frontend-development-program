@@ -1,0 +1,54 @@
+@use "../abstracts/_variables" as v;
+
+.product-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing-unit * 2;
+  text-align: center;
+  align-items: center;
+  justify-content: flex-start;
+
+  &__image-section {
+    position: relative;
+    cursor: pointer;
+
+    &-image {
+      box-shadow: 0 20px 80px 0 rgb(193 199 212 / 70.2%);
+    }
+  }
+
+  &__sale-badge {
+    color: v.$color-primary-contrast;
+    background-color: v.$color-primary;
+    padding: v.$spacing-unit v.$spacing-unit * 1.5;
+    font-size: v.$text-xs;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+  }
+
+  &__price-paragraph {
+    font-size: v.$text-lg;
+    font-weight: 700;
+    color: v.$color-description;
+  }
+
+  &__name-paragraph {
+    font-size: v.$text-lg;
+    font-weight: 700;
+    max-width: 70%;
+    margin: 0 auto;
+    overflow-wrap: break-word;
+    min-height: 4.5em;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__button-primary {
+    font-size: 15px;
+    padding: v.$spacing-unit * 1 v.$spacing-unit * 3;
+    align-self: center;
+  }
+}

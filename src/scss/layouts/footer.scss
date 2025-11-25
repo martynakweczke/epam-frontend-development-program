@@ -20,6 +20,7 @@
         padding: v.$spacing-unit * 4.5 v.$spacing-unit * 10 v.$spacing-unit * 4
           v.$spacing-unit * 10;
       }
+
       @media (max-width: v.$breakpoint-lg) {
         padding: v.$spacing-unit * 4.5 v.$spacing-unit * 5 v.$spacing-unit * 4
           v.$spacing-unit * 5;

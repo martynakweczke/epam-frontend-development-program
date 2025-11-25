@@ -1,0 +1,290 @@
+@use "../abstracts/variables" as v;
+
+.about {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing-unit * 16;
+  margin-bottom: v.$spacing-unit * 16;
+
+  &__background {
+    position: relative;
+    width: 100%;
+    height: 540px;
+    overflow: hidden;
+
+    &-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.5);
+    }
+
+    &-title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: v.$color-text-secondary;
+      font-weight: 700;
+      text-align: center;
+
+      h1 {
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 v.$spacing-unit * 16 0 v.$spacing-unit * 16;
+    gap: v.$spacing-unit * 16;
+
+    @media (min-width: v.$breakpoint-md) and (max-width: v.$breakpoint-lg) {
+      gap: v.$spacing-unit * 10;
+    }
+
+    @media (max-width: v.$breakpoint-md) {
+      padding: 0 v.$spacing-unit * 8 0 v.$spacing-unit * 8;
+    }
+
+    &-information {
+      display: flex;
+      justify-content: center;
+      gap: v.$spacing-unit * 4;
+
+      @media (min-width: v.$breakpoint-md) and (max-width: v.$breakpoint-lg) {
+        gap: v.$spacing-unit * 2;
+      }
+
+      @media (max-width: v.$breakpoint-md) {
+        flex-direction: column;
+        gap: v.$spacing-unit * 4;
+      }
+
+      &-single {
+        flex: 1;
+        display: grid;
+        grid-template-rows: auto auto 1fr;
+        text-align: center;
+        justify-items: center;
+        gap: v.$spacing-unit * 2.5;
+
+        @media (min-width: v.$breakpoint-md) and (max-width: v.$breakpoint-lg) {
+          gap: v.$spacing-unit * 1;
+        }
+
+        .information-single-title {
+          font-size: v.$text-xl;
+          font-weight: 700;
+          display: flex;
+          min-height: 48px;
+          align-items: center;
+
+          @media (min-width: v.$breakpoint-md) and (max-width: v.$breakpoint-lg) {
+            font-size: v.$text-base;
+          }
+        }
+
+        p {
+          display: flex;
+          text-align: center;
+          align-items: center;
+          min-height: 48px;
+
+          @media (min-width: v.$breakpoint-md) and (max-width: v.$breakpoint-lg) {
+            font-size: v.$text-xs;
+          }
+        }
+
+        .about__icons-images {
+          background-color: v.$color-primary;
+          width: 62px;
+          height: 62px;
+        }
+      }
+    }
+
+    &-arrivals {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: v.$spacing-unit * 3;
+      align-items: stretch;
+
+      @media (max-width: v.$breakpoint-md) {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      &-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: v.$spacing-unit * 4;
+
+        @media (min-width: v.$breakpoint-md) and (max-width: v.$breakpoint-lg) {
+          gap: v.$spacing-unit * 2;
+        }
+
+        @media (max-width: v.$breakpoint-md) {
+          gap: v.$spacing-unit * 2;
+        }
+
+        h2 {
+          @media (min-width: v.$breakpoint-md) and (max-width: v.$breakpoint-lg) {
+            font-size: 24px;
+          }
+
+          @media (max-width: v.$breakpoint-md) {
+            font-size: 22px;
+            text-align: center;
+          }
+        }
+
+        p {
+          color: v.$color-description;
+
+          @media (min-width: v.$breakpoint-md) and (max-width: v.$breakpoint-lg) {
+            font-size: 12px;
+          }
+
+          @media (max-width: v.$breakpoint-md) {
+            text-align: center;
+          }
+        }
+
+        &-button-link {
+          @media (max-width: v.$breakpoint-md) {
+            align-self: center;
+          }
+        }
+
+        &-button {
+          padding: v.$spacing-unit * 2.5 v.$spacing-unit * 3.5;
+
+          @media (min-width: v.$breakpoint-md) and (max-width: v.$breakpoint-lg) {
+            padding: v.$spacing-unit * 1.5 v.$spacing-unit * 2.5;
+            font-size: 15px;
+          }
+
+          @media (max-width: v.$breakpoint-md) {
+            align-self: center;
+            padding: v.$spacing-unit * 1.5 v.$spacing-unit * 2.5;
+            font-size: 12px;
+          }
+        }
+      }
+
+      &-image {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        display: block;
+
+        @media (max-width: v.$breakpoint-md) {
+          width: 80%;
+          height: 80%;
+          justify-self: center;
+        }
+      }
+    }
+
+    &-team {
+      display: flex;
+      flex-direction: column;
+      gap: v.$spacing-unit * 6;
+
+      &-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-text {
+          font-size: 40px;
+          font-weight: 900;
+          position: relative;
+
+          @media (min-width: v.$breakpoint-md) and (max-width: v.$breakpoint-lg) {
+            font-size: 30px;
+          }
+
+          @media (max-width: v.$breakpoint-md) {
+            font-size: 25px;
+            text-align: center;
+          }
+
+          &::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: v.$color-primary;
+            margin-top: 10px;
+          }
+        }
+      }
+
+      &-list {
+        display: flex;
+        gap: v.$spacing-unit * 4;
+        align-items: flex-start;
+        justify-content: center;
+
+        @media (max-width: v.$breakpoint-md) {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .team-person-card {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: v.$spacing-unit * 3.5;
+
+          @media (min-width: v.$breakpoint-md) and (max-width: v.$breakpoint-lg) {
+            gap: v.$spacing-unit * 1.5;
+          }
+
+          .team-person-card-image {
+            width: 100%;
+            object-fit: cover;
+
+            @media (max-width: v.$breakpoint-md) {
+              width: 80%;
+            }
+          }
+
+          .team-person-card-name {
+            font-size: v.$text-xl;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 60px;
+
+            @media (min-width: v.$breakpoint-md) and (max-width: v.$breakpoint-lg) {
+              font-size: 15px;
+            }
+          }
+
+          .team-person-card-work {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @media (min-width: v.$breakpoint-md) and (max-width: v.$breakpoint-lg) {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

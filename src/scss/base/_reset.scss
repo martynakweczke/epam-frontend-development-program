@@ -1,7 +1,7 @@
 // Based on https://www.boag.online/notepad/post/css-reset
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -60,9 +60,10 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
+  /* stylelint-disable-next-line */
   font: inherit;
   vertical-align: baseline;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
   text-size-adjust: none;
 }
@@ -89,10 +90,10 @@ q {
   quotes: none;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
   content: "";
   content: none;
 }
@@ -103,6 +104,5 @@ table {
 }
 
 input {
-  -webkit-appearance: none;
   border-radius: 0;
 }

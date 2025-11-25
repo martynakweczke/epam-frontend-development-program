@@ -1,0 +1,397 @@
+@use "../abstracts/variables" as v;
+
+.catalog {
+  &__container {
+    @media (min-width: v.$breakpoint-2xl) {
+      padding: 0 v.$spacing-unit * 22 v.$spacing-unit * 8 v.$spacing-unit * 10;
+    }
+
+    @media (max-width: v.$breakpoint-xl) {
+      padding: 0 v.$spacing-unit * 14 v.$spacing-unit * 8 v.$spacing-unit * 10;
+    }
+
+    @media (max-width: v.$breakpoint-lg) {
+      padding: 0 v.$spacing-unit * 12 v.$spacing-unit * 8 v.$spacing-unit * 12;
+    }
+
+    @media (max-width: v.$breakpoint-md) {
+      padding: 0 v.$spacing-unit * 8 v.$spacing-unit * 8 v.$spacing-unit * 8;
+    }
+
+    @media (max-width: v.$breakpoint-sm) {
+      padding: 0 v.$spacing-unit * 4 v.$spacing-unit * 8 v.$spacing-unit * 4;
+    }
+
+    &-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      margin-top: 85px;
+      flex-wrap: wrap;
+      gap: v.$spacing-unit * 2;
+
+      @media (max-width: v.$breakpoint-lg) {
+        margin-top: 60px;
+        margin-bottom: 30px;
+      }
+
+      @media (max-width: v.$breakpoint-md) {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .controls-left {
+        .info-text {
+          color: v.$color-background-secondary;
+          font-size: v.$text-base;
+        }
+      }
+
+      .controls-right {
+        display: flex;
+        gap: v.$spacing-unit * 10;
+        align-items: center;
+
+        @media (max-width: v.$breakpoint-lg) {
+          gap: v.$spacing-unit * 2;
+        }
+
+        @media (max-width: v.$breakpoint-md) {
+          flex-direction: column;
+          gap: v.$spacing-unit * 2;
+          width: 100%;
+        }
+
+        .controls-right-close {
+          display: flex;
+          gap: v.$spacing-unit;
+          position: relative;
+        }
+
+        .filter-button {
+          background: none;
+          border: 2px solid v.$color-catalog-elements;
+          padding: 10px;
+          cursor: pointer;
+          color: v.$color-background-secondary;
+        }
+
+        .filters-panel {
+          display: none;
+          position: absolute;
+          left: 40%;
+          transform: translateX(-50%);
+          min-width: 200px;
+          background: v.$color-background;
+          margin-top: 20px;
+          padding: v.$spacing-unit * 3 v.$spacing-unit * 2 v.$spacing-unit * 2;
+          z-index: 1;
+          width: 70vw;
+
+          @media (max-width: v.$breakpoint-lg) {
+            min-width: 100%;
+            left: 0;
+            transform: none;
+            max-width: 100%;
+          }
+        }
+
+        .filters-panel.filters-expanded {
+          display: block;
+        }
+
+        form {
+          width: 100%;
+        }
+
+        hr {
+          border-top: 2px solid v.$color-primary;
+          margin: 20px 0;
+        }
+
+        .filters-row {
+          display: flex;
+          gap: v.$spacing-unit * 2;
+          justify-content: flex-start;
+          align-items: flex-end;
+          flex-wrap: nowrap;
+          width: auto;
+
+          @media (max-width: v.$breakpoint-lg) {
+            flex-direction: column;
+            align-items: stretch;
+            gap: v.$spacing-unit * 2.5;
+          }
+        }
+
+        .filter-group {
+          display: flex;
+          flex-direction: column;
+          min-width: 120px;
+          flex: 1 1 0;
+          width: 100%;
+
+          label {
+            margin-bottom: 8px;
+            font-weight: 700;
+            display: block;
+            color: v.$color-description;
+          }
+
+          input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            margin-top: 7px;
+            margin-bottom: 10px;
+          }
+
+          select {
+            padding: 8px;
+            border: 2px solid v.$color-catalog-elements;
+            font-size: v.$text-base;
+            width: 100%;
+            height: 38px;
+            color: v.$color-filter-elements;
+            cursor: pointer;
+          }
+
+          select:focus {
+            border-color: v.$color-primary;
+          }
+
+          select.filter-active {
+            border-color: v.$color-primary;
+            background-color: rgba(v.$color-primary, 0.05);
+          }
+
+          input[type="radio"]:checked {
+            accent-color: v.$color-primary;
+          }
+        }
+
+        .filters-actions {
+          display: flex;
+          gap: 16px;
+          margin-top: 24px;
+          justify-content: flex-start;
+
+          .button-primary {
+            font-size: 15px;
+            padding: v.$spacing-unit * 2 v.$spacing-unit * 7;
+
+            @media (max-width: v.$breakpoint-lg) {
+              font-size: 10px;
+              padding: v.$spacing-unit * 2 v.$spacing-unit * 4;
+            }
+          }
+
+          @media (max-width: v.$breakpoint-lg) {
+            justify-content: center;
+          }
+        }
+
+        .sorting {
+          position: relative;
+
+          .sort-select {
+            padding: 10px 35px 10px 15px;
+            border: 2px solid v.$color-catalog-elements;
+            cursor: pointer;
+            font-size: v.$text-base;
+            color: v.$color-background-secondary;
+          }
+        }
+
+        .search {
+          position: relative;
+
+          .search-input {
+            padding: 10px 35px 10px 15px;
+            border: 2px solid v.$color-catalog-elements;
+            font-size: v.$text-base;
+            min-width: 340px;
+
+            @media (max-width: v.$breakpoint-lg) {
+              min-width: 250px;
+            }
+
+            @media (max-width: v.$breakpoint-md) {
+              min-width: 100%;
+            }
+
+            @media (max-width: v.$breakpoint-sm) {
+              min-width: 100%;
+              font-size: v.$text-sm;
+            }
+          }
+
+          .search-button {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: v.$color-background-secondary;
+
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+    }
+
+    &-products {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: v.$spacing-unit * 6;
+
+      @media (max-width: v.$breakpoint-xl) {
+        gap: v.$spacing-unit * 4;
+      }
+
+      @media (max-width: v.$breakpoint-lg) {
+        grid-template-columns: 1fr;
+        gap: v.$spacing-unit * 4;
+      }
+
+      .products-left {
+        display: flex;
+        flex-direction: column;
+        gap: v.$spacing-unit * 7.5;
+
+        .products-suitcases {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: v.$spacing-unit * 6 v.$spacing-unit;
+
+          @media (max-width: v.$breakpoint-xl) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: v.$spacing-unit * 4 v.$spacing-unit;
+          }
+
+          @media (max-width: v.$breakpoint-lg) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: v.$spacing-unit * 3 v.$spacing-unit * 0.5;
+          }
+
+          @media (max-width: v.$breakpoint-md) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: v.$spacing-unit * 2;
+          }
+
+          @media (max-width: v.$breakpoint-sm) {
+            grid-template-columns: 1fr;
+            gap: v.$spacing-unit * 3;
+          }
+        }
+
+        .pagination {
+          display: flex;
+          text-align: center;
+          margin-bottom: 120px;
+          align-items: center;
+          justify-content: space-between;
+
+          .button-switch {
+            background-color: v.$color-background;
+            border: 2px solid v.$color-primary;
+            color: v.$color-text;
+            font-size: 11px;
+            padding: 10px 20px;
+            border-radius: 5px;
+
+            .reverse {
+              transform: scaleX(-1);
+            }
+          }
+
+          .pagination-button {
+            color: v.$color-text;
+            cursor: pointer;
+            text-align: center;
+            justify-content: center;
+            border: none;
+            background-color: v.$color-background;
+            margin: 0 5px;
+          }
+
+          .pagination-button-active {
+            border: none;
+            background-color: v.$color-primary;
+            color: v.$color-background;
+            cursor: pointer;
+            text-align: center;
+            justify-content: center;
+            padding: v.$spacing-unit * 1.5 v.$spacing-unit * 2;
+            border-radius: 5px;
+            margin: 0 5px;
+          }
+        }
+      }
+
+      .product-sets-all-container {
+        display: flex;
+        flex-direction: column;
+        gap: v.$spacing-unit * 3;
+        min-width: 340px;
+
+        @media (max-width: v.$breakpoint-xl) {
+          min-width: 280px;
+        }
+
+        @media (max-width: v.$breakpoint-lg) {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          min-width: 100%;
+        }
+
+        @media (max-width: v.$breakpoint-md) {
+          grid-template-columns: 1fr;
+          gap: v.$spacing-unit * 2;
+        }
+
+        .top-best-sets-text {
+          font-weight: 700;
+        }
+
+        .product-sets-all-elements {
+          display: flex;
+          flex-direction: column;
+          gap: v.$spacing-unit * 3;
+
+          .luggage-set-container {
+            display: flex;
+            gap: v.$spacing-unit * 2.5;
+
+            .luggage-set-image {
+              cursor: pointer;
+              object-fit: cover;
+            }
+
+            .luggage-set-details {
+              display: flex;
+              flex-direction: column;
+              gap: v.$spacing-unit * 0.5;
+              justify-content: center;
+
+              .luggage-set-details-name {
+                font-size: v.$text-sm;
+              }
+
+              .luggage-set-details-price {
+                font-size: v.$text-sm;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

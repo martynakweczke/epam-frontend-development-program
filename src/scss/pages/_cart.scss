@@ -1,0 +1,256 @@
+@use "../abstracts/variables" as v;
+
+.cart {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__background {
+    position: relative;
+    width: 100%;
+    height: v.$spacing-unit * 29;
+    overflow: hidden;
+    margin-bottom: v.$spacing-unit * 8.5;
+
+    &-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.5);
+    }
+
+    &-title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: v.$color-text-secondary;
+      font-weight: 700;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: center;
+    padding: 0 v.$spacing-unit * 28 0 v.$spacing-unit * 25;
+
+    @media (min-width: v.$breakpoint-md) and (max-width: v.$breakpoint-lg) {
+      padding: 0 v.$spacing-unit * 10 0 v.$spacing-unit * 10;
+    }
+
+    @media (max-width: v.$breakpoint-md) {
+      padding: 0 v.$spacing-unit * 2 0 v.$spacing-unit * 2;
+    }
+
+    &-products {
+      padding-bottom: 20px;
+
+      .cart-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: v.$spacing-unit * 8.5;
+
+        &__text-empty-cart {
+          text-align: center;
+          padding: v.$spacing-unit * 5;
+        }
+
+        &__head {
+          background-color: v.$color-background-secondary;
+          color: v.$color-text-secondary;
+        }
+
+        &__row {
+          font-size: v.$text-lg;
+          font-weight: 700;
+
+          @media (max-width: v.$breakpoint-sm) {
+            font-size: 10px;
+          }
+        }
+
+        &__header {
+          padding: v.$spacing-unit * 3 v.$spacing-unit * 2;
+          text-align: center;
+          font-weight: 700;
+          font-size: v.$text-lg;
+
+          @media (max-width: v.$breakpoint-sm) {
+            font-size: 10px;
+            padding: v.$spacing-unit * 0.5 v.$spacing-unit * 0.5;
+            align-content: center;
+          }
+        }
+
+        &__body {
+          .cart-table__row {
+            border-bottom: 2px solid v.$color-primary;
+
+            &:hover {
+              background-color: rgb(193 199 212 / 20%);
+            }
+          }
+        }
+
+        .cart-table__cell {
+          padding: v.$spacing-unit * 2 v.$spacing-unit * 2;
+          text-align: center;
+          vertical-align: middle;
+
+          @media (max-width: v.$breakpoint-sm) {
+            font-size: 10px;
+            padding: v.$spacing-unit * 0.5 v.$spacing-unit * 0.5;
+            align-content: center;
+          }
+
+          &--image {
+            width: 120px;
+
+            img {
+              max-width: 100%;
+              height: auto;
+            }
+          }
+
+          &--quantity {
+            text-align: center;
+            vertical-align: center;
+            white-space: nowrap;
+
+            .quantity-btn {
+              display: inline-block;
+              vertical-align: middle;
+              background: none;
+              border: none;
+              padding: 5px 10px;
+              cursor: pointer;
+              font-weight: 700;
+              font-size: v.$text-3xl;
+
+              @media (max-width: v.$breakpoint-sm) {
+                font-size: v.$text-sm;
+              }
+
+              &:hover {
+                opacity: 0.7;
+              }
+            }
+
+            .quantity-paragraph {
+              display: inline-block;
+              vertical-align: middle;
+              width: 40px;
+              border: none;
+              padding: v.$spacing-unit;
+              font-size: v.$text-2xl;
+              font-weight: 700;
+              text-align: center;
+
+              @media (max-width: v.$breakpoint-sm) {
+                font-size: v.$text-sm;
+              }
+            }
+          }
+
+          &--delete {
+            text-align: center;
+
+            .delete-btn {
+              background: none;
+              border: none;
+              cursor: pointer;
+
+              &:hover {
+                opacity: 0.7;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &-actions-checkout-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: v.$spacing-unit;
+
+      @media (min-width: v.$breakpoint-2xl) {
+        justify-content: space-between;
+      }
+
+      .cart__content-actions {
+        display: flex;
+        gap: v.$spacing-unit * 2;
+
+        &-button {
+          font-size: v.$text-sm;
+          padding: 17px 20px;
+        }
+      }
+
+      .cart__content-checkout {
+        display: flex;
+        margin-bottom: v.$spacing-unit * 15;
+
+        .checkout-summary {
+          background-color: v.$color-background-secondary;
+          padding: v.$spacing-unit * 6 v.$spacing-unit * 5;
+          width: 570px;
+
+          @media (max-width: v.$breakpoint-sm) {
+            width: auto;
+          }
+
+          &__row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: v.$spacing-unit * 1.5 0;
+
+            &--total {
+              .checkout-summary__label,
+              .checkout-summary__value {
+                font-size: 20px;
+              }
+            }
+          }
+
+          &__label {
+            color: v.$color-text-secondary;
+            font-size: v.$text-base;
+            font-weight: 700;
+          }
+
+          &__value {
+            color: v.$color-text-secondary;
+            font-size: v.$text-base;
+            font-weight: 700;
+          }
+
+          &__separator {
+            height: 2px;
+            background-color: v.$color-primary;
+            margin: v.$spacing-unit * 0.5 0;
+            opacity: 0.6;
+          }
+
+          &__button {
+            padding: v.$spacing-unit * 1 v.$spacing-unit * 5.5;
+            margin-top: v.$spacing-unit * 3;
+            font-weight: 700;
+          }
+
+          &__discount {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

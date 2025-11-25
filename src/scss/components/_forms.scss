@@ -1,0 +1,46 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as mixin;
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing-unit;
+
+  label {
+    font-size: v.$text-sm;
+  }
+
+  label.required {
+    @include mixin.element-required;
+  }
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+textarea,
+select {
+  padding: v.$spacing-unit * 1.5;
+  border: 2px solid v.$color-primary;
+  font-size: v.$text-sm;
+  width: 100%;
+}
+
+.feedback-elements .form-group {
+  input,
+  textarea {
+    padding: v.$spacing-unit * 1.5;
+    font-size: 14px;
+  }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  cursor: pointer;
+}
+
+.error-message {
+  font-size: v.$text-xs;
+  color: red;
+  height: 14px;
+}

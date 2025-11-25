@@ -3,7 +3,7 @@
 }
 .footer__top {
   background-color: #504e4a;
-  color: #ffffff;
+  color: #fff;
   position: relative;
 }
 .footer__top-background {
@@ -55,7 +55,7 @@
   min-width: 100px;
 }
 .footer__bottom {
-  background-color: #ffffff;
+  background-color: #fff;
 }
 .footer__bottom-container {
   display: grid;

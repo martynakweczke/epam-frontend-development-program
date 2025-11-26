@@ -1,6 +1,8 @@
-# 🌐 Viewing the App 
+# 🌐 Viewing the App
 
 To view the app live, please visit: [https://martynakweczke.github.io/epam-frontend-development-program/src/](https://martynakweczke.github.io/epam-frontend-development-program/src/)
+
+![App's Catalog Page](image.png)
 
 # 📱 App Description
 

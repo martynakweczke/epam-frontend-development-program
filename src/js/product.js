@@ -27,7 +27,7 @@ const getSelectedProduct = () => {
 export function navigateToProductDetailsPage(product) {
   localStorage.setItem(SELECTED_PRODUCT_STORAGE_KEY, JSON.stringify(product));
 
-  window.open("/src/html/product-details.html", "_self");
+  window.location.href = "/product-details.html";
 }
 
 export const getProductRatingHTMLElement = (product) => {
@@ -41,9 +41,9 @@ export const getProductRatingHTMLElement = (product) => {
     const hasGreaterRating = roundedProductRating >= i;
 
     if (hasGreaterRating) {
-      img.src = "../assets/images/gold-star.svg";
+      img.src = "/src/assets/images/gold-star.svg";
     } else {
-      img.src = "../assets/images/gray-star.svg";
+      img.src = "/src/assets/images/gray-star.svg";
     }
 
     productRatingContainer.appendChild(img);

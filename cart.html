@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../../dist/scss/main.css" />
+    <link rel="stylesheet" href="/src/scss/main.scss" />
     <title>Best Shop</title>
   </head>
   <body>
@@ -13,13 +13,13 @@
         <div class="header__top">
           <div class="header__socials">
             <a href="#">
-              <img src="../assets/images/facebook.svg" alt="Facebook" />
+              <img src="/src/assets/images/facebook.svg" alt="Facebook" />
             </a>
             <a href="#">
-              <img src="../assets/images/twitter.svg" alt="Twitter" />
+              <img src="/src/assets/images/twitter.svg" alt="Twitter" />
             </a>
             <a href="#">
-              <img src="../assets/images/instagram.svg" alt="Instagram" />
+              <img src="/src/assets/images/instagram.svg" alt="Instagram" />
             </a>
           </div>
 
@@ -30,9 +30,9 @@
           </button>
 
           <div class="header__logo">
-            <a href="../index.html" class="header__logo-link">
+            <a href="/index.html" class="header__logo-link">
               <img
-                src="../assets/images/logo.svg"
+                src="/src/assets/images/logo.svg"
                 alt="Best Shop logo"
                 class="header__logo-img"
               />
@@ -46,17 +46,17 @@
               aria-label="Profile"
               id="user-profile-icon"
             >
-              <img src="../assets/images/profile.svg" alt="User profile" />
+              <img src="/src/assets/images/profile.svg" alt="User profile" />
             </button>
             <div class="header__user-cart-container">
-              <a href="cart.html">
+              <a href="/cart.html">
                 <button
                   class="user-cart-button"
                   aria-label="Shopping cart"
                   id="user-cart-icon"
                 >
                   <img
-                    src="../assets/images/shopping-cart.svg"
+                    src="/src/assets/images/shopping-cart.svg"
                     alt="Cart"
                   /></button
               ></a>
@@ -71,29 +71,29 @@
 
         <nav class="header__nav">
           <ul class="nav__list">
-            <li><a href="../index.html">Home</a></li>
+            <li><a href="/index.html">Home</a></li>
             <li>
-              <a href="catalog.html"
+              <a href="/catalog.html"
                 >Catalog
                 <img
-                  src="../assets/images/arrow.svg"
+                  src="/src/assets/images/arrow.svg"
                   alt="Catalog menu arrow"
                 />
               </a>
             </li>
-            <li><a href="about.html" class="active">About Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="/contact.html">Contact Us</a></li>
           </ul>
 
           <div class="header__nav-mobile-social-icons">
             <a href="#">
-              <img src="../assets/images/facebook.svg" alt="Facebook" />
+              <img src="/src/assets/images/facebook.svg" alt="Facebook" />
             </a>
             <a href="#">
-              <img src="../assets/images/twitter.svg" alt="Twitter" />
+              <img src="/src/assets/images/twitter.svg" alt="Twitter" />
             </a>
             <a href="#">
-              <img src="../assets/images/instagram.svg" alt="Instagram" />
+              <img src="/src/assets/images/instagram.svg" alt="Instagram" />
             </a>
           </div>
         </nav>
@@ -111,7 +111,7 @@
           <div class="password-wrapper">
             <input type="password" id="password" required />
             <img
-              src="../assets/images/toggle-password.svg"
+              src="/src/assets/images/toggle-password.svg"
               alt="Toggle password visibility"
               id="toggle-password"
               class="toggle-password-icon"
@@ -133,150 +133,76 @@
       </form>
     </dialog>
 
-    <main class="about">
-      <div class="about__background">
+    <main class="cart">
+      <div class="cart__background">
         <img
-          src="../assets/images/about.svg"
-          alt="About Us"
-          class="about__background-image"
+          src="/src/assets/images/my-cart.svg"
+          alt="My Cart"
+          class="cart__background-image"
         />
-        <div class="about__background-title">
-          <h1>About Us</h1>
-          <p>
-            Duis vestibulum elit vel neque pharetra vulputate. Duis rutrum non
-            risus in imperdiet.
-          </p>
-        </div>
+        <h1 class="cart__background-title">My Cart</h1>
       </div>
-      <div class="about__content">
-        <div class="about__content-information">
-          <div class="about__content-information-single">
-            <img
-              src="../assets/images/about-icon-1.svg"
-              alt="Superior Accuracy"
-              class="about__icons-images"
-            />
-            <p class="information-single-title">Superior Accuracy</p>
-            <p>
-              Qewist vestibulum elit vel neque pharetra vulputate scelerisque
-              nisi urna.
-            </p>
-          </div>
-          <div class="about__content-information-single">
-            <img
-              src="../assets/images/about-icon-2.svg"
-              alt="Awards"
-              class="about__icons-images"
-            />
-            <p class="information-single-title">Awards</p>
-            <p>
-              Vestibulum elit vel neque pharetra vulputate. Quisque scelerisque
-              nisi urna.
-            </p>
-          </div>
-          <div class="about__content-information-single">
-            <img
-              src="../assets/images/about-icon-3.svg"
-              alt="Ecological"
-              class="about__icons-images"
-            />
-            <p class="information-single-title">Ecological</p>
-            <p>
-              Elit vel neque duis vestibulum pharetra vulputateuisque
-              scelerisque nisi urna.
-            </p>
-          </div>
-          <div class="about__content-information-single">
-            <img
-              src="../assets/images/about-icon-4.svg"
-              alt="Shipping Worlwide"
-              class="about__icons-images"
-            />
-            <p class="information-single-title">Shipping Worlwide</p>
-            <p>
-              Quisque scelerisque nisi urna. Duis vestibulum elit vel neque
-              pharetra vulputate.
-            </p>
-          </div>
+      <div class="cart__content">
+        <div class="cart__content-products">
+          <table class="cart-table">
+            <thead class="cart-table__head">
+              <tr class="cart-table__row">
+                <th class="cart-table__header">IMAGE</th>
+                <th class="cart-table__header">PRODUCT NAME</th>
+                <th class="cart-table__header">PRICE</th>
+                <th class="cart-table__header">QUANTITY</th>
+                <th class="cart-table__header">TOTAL</th>
+                <th class="cart-table__header">DELETE</th>
+              </tr>
+            </thead>
+            <tbody id="cart-products-list" class="cart-table__body"></tbody>
+          </table>
         </div>
-        <div class="about__content-arrivals">
-          <div class="about__content-arrivals-text">
-            <h2>New Arrivals Every Week</h2>
-            <p>
-              Duis vestibulum elit vel neque pharetra vulputate. Quisque
-              scelerisque nisi urna. Duis rutrum non risus in imperdiet. Proin
-              molestie accumsan nulla sit. Quisque scelerisque nisi urnauis
-              rutrum.
-            </p>
-            <p>
-              Vitrumuis vestibulum elit vel neque pharetra vulputate. Quisque
-              scelerisque nisi urna. Duis vestibulum elit vel neque pharetra
-              vulputateuisque scelerisque nisi urna.
-            </p>
-            <a href="./catalog.html"
-            class="about__content-arrivals-text-button-link"
-              ><button
-                class="button-primary about__content-arrivals-text-button"
-                id="about__content-arrivals-text-button"
-              >
-                SEE ALL MODELS
+
+        <div class="cart__content-actions-checkout-container">
+          <div class="cart__content-actions">
+            <a href="/index.html"
+              ><button class="button-primary cart__content-actions-button">
+                CONTINUE SHOPPING
               </button></a
             >
+            <button
+              class="button-primary cart__content-actions-button"
+              id="clear-shopping-cart-button"
+            >
+              CLEAR SHOPPING CART
+            </button>
           </div>
-          <img
-            src="../assets/images/about-arrival.svg"
-            alt="New Arrivals Every Day"
-            class="about__content-arrivals-image"
-          />
-        </div>
-        <div class="about__content-team">
-          <div class="about__content-team-title">
-            <p class="about__content-team-title-text">Our Incredible Team</p>
-          </div>
-          <div class="about__content-team-list">
-            <div class="team-person-card">
-              <img
-                src="../assets/images/nataliia-foster.svg"
-                alt="Nataliia Foster Team"
-                class="team-person-card-image"
-              />
-              <p class="team-person-card-name">NATALIIA FOSTER</p>
-              <p class="team-person-card-work">Product Manager</p>
+          <div class="cart__content-checkout">
+            <div class="checkout-summary">
+              <div class="checkout-summary__row">
+                <span class="checkout-summary__label">Sub Total</span>
+                <span class="checkout-summary__value" id="subtotal"></span>
+              </div>
+              <div class="checkout-summary__separator"></div>
+              <div class="checkout-summary__row checkout-summary__discount">
+                <span class="checkout-summary__label">Discount</span>
+                <span class="checkout-summary__value" id="discount"></span>
+              </div>
+              <div
+                class="checkout-summary__separator checkout-summary__discount"
+              ></div>
+              <div class="checkout-summary__row">
+                <span class="checkout-summary__label">Shipping</span>
+                <span class="checkout-summary__value" id="shipping"></span>
+              </div>
+              <div class="checkout-summary__separator"></div>
+              <div class="checkout-summary__row checkout-summary__row--total">
+                <span class="checkout-summary__label">Total</span>
+                <span class="checkout-summary__value" id="total"></span>
+              </div>
+              <button
+                class="button-primary checkout-summary__button"
+                id="checkout-button"
+              >
+                CHECKOUT
+              </button>
             </div>
-            <div class="team-person-card">
-              <img
-                src="../assets/images/alexandra-thompson.svg"
-                alt="Alexandra Thompson Team"
-                class="team-person-card-image"
-              />
-              <p class="team-person-card-name">ALEXANDRA THOMPSON</p>
-              <p class="team-person-card-work">Graphic Designer</p>
-            </div>
-            <div class="team-person-card">
-              <img
-                src="../assets/images/iryna-brooks.svg"
-                alt="Iryna Brooks Team"
-                class="team-person-card-image"
-              />
-              <p class="team-person-card-name">IRYNA BROOKS</p>
-              <p class="team-person-card-work">Head Of Marketing</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="main__banner">
-        <div class="main__banner-text">
-          <div class="main__banner-left">
-            <p class="promo-text">50%</p>
-            <p>Curabitur vulputate arcu odio, ac facilisis diam.</p>
-          </div>
-          <div class="main__banner-right">
-            <h2>Offer Of The Month</h2>
-            <p>
-              Curabitur vulputate arcu odio, ac facilisis diam accumsan ut. Ut
-              imperdiet et leo in vulputate.
-            </p>
-            <button class="button-primary">Get Offer Today</button>
           </div>
         </div>
       </div>
@@ -285,7 +211,7 @@
     <footer class="footer">
       <div class="footer__top">
         <img
-          src="../assets/images/vector-lines.svg"
+          src="/src/assets/images/vector-lines.svg"
           alt="Horizontal lines"
           class="footer__top-background"
         />
@@ -294,7 +220,7 @@
           <div class="footer__top-content">
             <div class="footer__top-content-item">
               <img
-                src="../assets/images/travel-hospitality.svg"
+                src="/src/assets/images/travel-hospitality.svg"
                 alt="Travel hospitality"
                 class="footer__icon"
               />
@@ -302,7 +228,7 @@
             </div>
             <div class="footer__top-content-item">
               <img
-                src="../assets/images/track-work-delivery.svg"
+                src="/src/assets/images/track-work-delivery.svg"
                 alt="Track work delivery"
                 class="footer__icon"
               />
@@ -310,7 +236,7 @@
             </div>
             <div class="footer__top-content-item">
               <img
-                src="../assets/images/coins.svg"
+                src="/src/assets/images/coins.svg"
                 alt="Coins"
                 class="footer__icon"
               />
@@ -318,7 +244,7 @@
             </div>
             <div class="footer__top-content-item">
               <img
-                src="../assets/images/education.svg"
+                src="/src/assets/images/education.svg"
                 alt="Education"
                 class="footer__icon"
               />
@@ -333,7 +259,7 @@
           <div class="footer__bottom-information">
             <div class="footer__bottom-information-top">
               <div class="footer__about-us">
-                <h4><a href="about.html">About Us</a></h4>
+                <h4><a href="/about.html">About Us</a></h4>
                 <span>Organisation</span>
                 <span>Partners</span>
                 <span>Clients</span>
@@ -364,7 +290,7 @@
           </div>
           <div class="footer__bottom-contact">
             <div class="footer__contact-us">
-              <h4><a href="contact.html">Contact Us</a></h4>
+              <h4><a href="/contact.html">Contact Us</a></h4>
               <p>
                 Bendum dolor eu varius. Morbi fermentum velitsodales egetonec.
                 volutpat orci. Sed ipsum felis, tristique egestas et, convallis
@@ -375,7 +301,7 @@
               <div class="footer__contact-data-one">
                 <div class="data-details">
                   <img
-                    src="../assets/images/phone.svg"
+                    src="/src/assets/images/phone.svg"
                     alt="Phone icon"
                     class="footer__contact-icon"
                   />
@@ -383,7 +309,7 @@
                 </div>
                 <div class="data-details">
                   <img
-                    src="../assets/images/email.svg"
+                    src="/src/assets/images/email.svg"
                     alt="Email icon"
                     class="footer__contact-icon"
                   />
@@ -393,7 +319,7 @@
               <div class="footer__contact-data-two">
                 <div class="data-details">
                   <img
-                    src="../assets/images/time.svg"
+                    src="/src/assets/images/time.svg"
                     alt="Time icon"
                     class="footer__contact-icon"
                   />
@@ -401,7 +327,7 @@
                 </div>
                 <div class="data-details">
                   <img
-                    src="../assets/images/address.svg"
+                    src="/src/assets/images/address.svg"
                     alt="Address icon"
                     class="footer__contact-icon"
                   />
@@ -415,7 +341,7 @@
       </div>
     </footer>
 
-    <script type="module" src="../js/main.js"></script>
-    <script type="module" src="../js/about.js"></script>
+    <script type="module" src="/src/js/main.js"></script>
+    <script type="module" src="/src/js/cart.js"></script>
   </body>
 </html>

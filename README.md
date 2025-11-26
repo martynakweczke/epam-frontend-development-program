@@ -1,6 +1,6 @@
 # 🌐 Viewing the App
 
-To view the app live, please visit: [https://martynakweczke.github.io/epam-frontend-development-program/src/](https://martynakweczke.github.io/epam-frontend-development-program/src/)
+To view the app live, please visit: [[https://martynakweczke.github.io/epam-frontend-development-program/src/](https://vite-project-xi-hazel.vercel.app/)]([https://martynakweczke.github.io/epam-frontend-development-program/src/](https://vite-project-xi-hazel.vercel.app/))
 
 ![App's Catalog Page](image.png)
 
